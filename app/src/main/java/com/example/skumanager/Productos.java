@@ -27,7 +27,7 @@ public class Productos extends AppCompatActivity {
         recyclerViewProducts = (RecyclerView) findViewById(R.id.productrecycler);
         recyclerViewProducts.setLayoutManager(new LinearLayoutManager(this));
 
-        productAdapter = new RecyclerViewAdapter(SQLiteConnectionHelper.mostrarproductos());
+       // productAdapter = new RecyclerViewAdapter(SQLiteConnectionHelper.mostrarproductos());
 
         agregar = (ImageView) findViewById(R.id.imgAgregarProd);
         agregar.setOnClickListener(new View.OnClickListener() {
