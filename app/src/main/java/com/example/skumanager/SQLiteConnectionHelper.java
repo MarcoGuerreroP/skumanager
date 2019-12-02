@@ -13,8 +13,6 @@ import java.util.List;
 
 public class SQLiteConnectionHelper extends SQLiteOpenHelper {
 
-
-
     public SQLiteConnectionHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -23,9 +21,8 @@ public class SQLiteConnectionHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(Utilidades.CREATE_USERS_TABLE);
         db.execSQL(Utilidades.CREATE_PRODUCTS_TABLE);
-
-
-
+        db.execSQL(Utilidades.CREATE_ENTRADAS_TABLE);
+        db.execSQL(Utilidades.CREATE_SALIDAS_TABLE);
     }
 
     @Override
@@ -48,7 +45,7 @@ public class SQLiteConnectionHelper extends SQLiteOpenHelper {
     //Obtener productos
     public List<ProductsModel> mostrarproductos(){
         SQLiteDatabase BD = getReadableDatabase();
-        Cursor cursor  = BD.query("users",new String[] {"ide,dsc,pu"},null,null,null,null,null);
+        Cursor cursor  = BD.query("products",new String[] {"ide,dsc,pu"},null,null,null,null,null);
         List<ProductsModel> productos = new ArrayList<>();
         if(cursor.moveToFirst()){
             do {

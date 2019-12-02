@@ -48,7 +48,7 @@ public class RegistrarEntrada extends AppCompatActivity {
     }
 
     public void registrarEntradas() {
-        SQLiteConnectionHelper connection = new SQLiteConnectionHelper(this, "bd_user", null, 1);
+        SQLiteConnectionHelper connection = ((MyApp) getApplication()).getConnection();
 
         SQLiteDatabase db = connection.getWritableDatabase();
         ContentValues valuesEntrada = new ContentValues();
@@ -110,19 +110,3 @@ public class RegistrarEntrada extends AppCompatActivity {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

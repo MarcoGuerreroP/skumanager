@@ -1,10 +1,8 @@
 package com.example.skumanager;
 
-import android.arch.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,12 +16,14 @@ public class MainActivity extends AppCompatActivity {
     public TextView btnregistrarse;
     public Button ingresar;
 
-    SQLiteConnectionHelper connection = new SQLiteConnectionHelper(this,"bd_user",null,1);
+    SQLiteConnectionHelper connection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        connection = ((MyApp) getApplication()).getConnection();
 
         btnregistrarse = (TextView) findViewById(R.id.txtregistrarse);
 

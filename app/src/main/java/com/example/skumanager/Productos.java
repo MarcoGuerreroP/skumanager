@@ -22,12 +22,20 @@ public class Productos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productos);
 
-        SQLiteConnectionHelper connection = new SQLiteConnectionHelper(this,"bd_user",null,1);
+        SQLiteConnectionHelper connection = ((MyApp) getApplication()).getConnection();
 
-        recyclerViewProducts = (RecyclerView) findViewById(R.id.productrecycler);
+        findViewById(R.id.backButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+        recyclerViewProducts = findViewById(R.id.productrecycler);
         recyclerViewProducts.setLayoutManager(new LinearLayoutManager(this));
 
-       // productAdapter = new RecyclerViewAdapter(SQLiteConnectionHelper.mostrarproductos());
+        productAdapter = new RecyclerViewAdapter(connection.mostrarproductos());
+        recyclerViewProducts.setAdapter(productAdapter);
 
         agregar = (ImageView) findViewById(R.id.imgAgregarProd);
         agregar.setOnClickListener(new View.OnClickListener() {

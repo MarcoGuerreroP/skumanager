@@ -36,7 +36,7 @@ public class RegistrarActivity extends AppCompatActivity {
     }
 
     private void registrarUsuarios() {
-        SQLiteConnectionHelper connection = new SQLiteConnectionHelper(this,"bd_user",null,1);
+        SQLiteConnectionHelper connection = ((MyApp) getApplication()).getConnection();
 
         SQLiteDatabase db = connection.getWritableDatabase();
         ContentValues values = new ContentValues();

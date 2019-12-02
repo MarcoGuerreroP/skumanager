@@ -9,18 +9,18 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ProductViewHolder> {
+public class InventarioAdapter extends RecyclerView.Adapter<InventarioAdapter.InventarioViewHolder> {
 
     public List<ProductsModel> productLista;
 
-    public RecyclerViewAdapter(List<ProductsModel> productLista) {
+    public InventarioAdapter(List<ProductsModel> productLista) {
         this.productLista = productLista;
     }
 
-    public static class ProductViewHolder extends RecyclerView.ViewHolder{
+    public static class InventarioViewHolder extends RecyclerView.ViewHolder{
         private TextView ID, Producto, PrecioU;
 
-        public ProductViewHolder(View itemView){
+        public InventarioViewHolder(View itemView){
             super(itemView);
             ID = itemView.findViewById(R.id.txtID);
             Producto = itemView.findViewById(R.id.txtDSC);
@@ -29,14 +29,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public InventarioAdapter.InventarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_products, parent,false);
-        ProductViewHolder viewHolder = new ProductViewHolder(view);
+        InventarioViewHolder viewHolder = new InventarioViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull InventarioViewHolder holder, int position) {
         holder.ID.setText(productLista.get(position).getID());
         holder.Producto.setText(productLista.get(position).getProducto());
         holder.PrecioU.setText(productLista.get(position).getPreciou());

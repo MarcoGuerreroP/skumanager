@@ -25,7 +25,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="0dp"
-        android:text="Productos"
+        android:text="Inventario"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/backButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,28 +33,8 @@
         app:layout_constraintStart_toEndOf="@id/backButton"
         app:layout_constraintTop_toTopOf="@+id/backButton" />
 
-    <ImageView
-        android:id="@+id/imgAgregarProd"
-        android:layout_width="50dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:srcCompat="@drawable/add" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="46dp"
-        android:layout_height="52dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgAgregarProd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgAgregarProd"
-        app:layout_constraintTop_toTopOf="@+id/imgAgregarProd"
-        app:srcCompat="@drawable/orden" />
-
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/productrecycler"
+        android:id="@+id/inventarioRecycler"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
@@ -64,5 +44,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgAgregarProd" />
+        app:layout_constraintTop_toBottomOf="@+id/backButton" />
 </android.support.constraint.ConstraintLayout>

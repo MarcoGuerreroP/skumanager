@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 public class Menu extends AppCompatActivity {
 
-    public ImageView imgproductos, imgentrada,imgsalida;
+    public ImageView imgproductos, imgentrada,imgsalida, imgInventario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,15 @@ public class Menu extends AppCompatActivity {
             public void onClick(View v) {
                 Intent salida = new Intent(Menu.this,RegistrarSalida.class);
                 startActivity(salida);
+            }
+        });
+
+        imgInventario = findViewById(R.id.imgInventario);
+        imgInventario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent inventario = new Intent(Menu.this, InventarioActivity.class);
+                startActivity(inventario);
             }
         });
     }

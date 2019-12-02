@@ -75,7 +75,7 @@ public class RegistrarSalida extends AppCompatActivity {
         }
 
     public void registrarSalidas() {
-        SQLiteConnectionHelper connection = new SQLiteConnectionHelper(this,"bd_user",null,1);
+        SQLiteConnectionHelper connection = ((MyApp) getApplication()).getConnection();
 
         SQLiteDatabase db = connection.getWritableDatabase();
         ContentValues valuesProd = new ContentValues();
