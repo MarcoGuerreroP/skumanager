@@ -71,6 +71,7 @@ public class AgregarProducto extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), "Producto: " + producto, Toast.LENGTH_SHORT).show();
 
+                    setResult(RESULT_OK);
                     finish();
 
                 } else {
