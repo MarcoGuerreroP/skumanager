@@ -20,11 +20,9 @@ public class Productos extends AppCompatActivity {
     private List<ProductsModel> productList = new ArrayList<>();
     SQLiteConnectionHelper connection;
 
-    private List<ProductsModel> productList = new ArrayList<>();
-    SQLiteConnectionHelper connection;
 
-    private List<ProductsModel> productList = new ArrayList<>();
-    SQLiteConnectionHelper connection;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,35 +46,21 @@ public class Productos extends AppCompatActivity {
         productAdapter = new RecyclerViewAdapter(productList);
         recyclerViewProducts.setAdapter(productAdapter);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        agregar = findViewById(R.id.imgAgregarProd);
-=======
->>>>>>> b1a2fd809430f19d2a7d23d9641d1ce344a5220f
-
         agregar = (ImageView) findViewById(R.id.imgAgregarProd);
->>>>>>> Cambios de aplicacion de sku mnager list view icon etc
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Productos.this,AgregarProducto.class);
+                Intent i = new Intent(Productos.this, AgregarProducto.class);
                 startActivityForResult(i, 101);
             }
         });
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
-=======
->>>>>>> Cambios de aplicacion de sku mnager list view icon etc
->>>>>>> b1a2fd809430f19d2a7d23d9641d1ce344a5220f
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 101) {
-            if(resultCode == RESULT_OK) {
+        if (requestCode == 101) {
+            if (resultCode == RESULT_OK) {
                 if (productList != null && connection != null) {
                     productList.clear();
                     productList = connection.mostrarproductos();
@@ -86,14 +70,7 @@ public class Productos extends AppCompatActivity {
             }
         }
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
+}
     //public List<ProductsModel> obtenerproductos;
     //List<ProductsModel> products = new ArrayList<>();
     //products.add(new ProductsModel(""))
-=======
->>>>>>> Cambios de aplicacion de sku mnager list view icon etc
->>>>>>> b1a2fd809430f19d2a7d23d9641d1ce344a5220f
-}
