@@ -54,4 +54,19 @@ public class SQLiteConnectionHelper extends SQLiteOpenHelper {
         }
         return productos;
     }
+
+    //Obtener entradas
+    public List<EntradasModel> mostrarentradas(){
+        SQLiteDatabase BD = getReadableDatabase();
+        Cursor cursorE  = BD.query("entradas",new String[] {"idee,dsce,cante"},null,null,null,null,null);
+        List<EntradasModel> entradas = new ArrayList<>();
+        if(cursorE.moveToFirst()){
+            do {
+                entradas.add(new EntradasModel(cursorE.getString(0), cursorE.getString(1), cursorE.getString(2)));
+            }while (cursorE.moveToNext());
+        }
+        return entradas;
+    }
+
+
 }

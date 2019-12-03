@@ -20,7 +20,7 @@ public class RegistrarEntrada extends AppCompatActivity {
 
     public EditText IDE, CBE, DSCE, CANTE, UME;
     public Button registrarE;
-    public ImageView lector;
+    public ImageView lector,back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class RegistrarEntrada extends AppCompatActivity {
         CANTE = findViewById(R.id.txtUM);
         registrarE = findViewById(R.id.btnRegistrarE);
         lector = findViewById(R.id.imageView2);
+        back = (ImageView) findViewById(R.id.backButton);
 
         lector.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +43,16 @@ public class RegistrarEntrada extends AppCompatActivity {
             }
         });
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent entrada = new Intent(RegistrarEntrada.this,Menu.class);
+                startActivity(entrada);
+            }
+        });
     }
+
+
     public void onClick(View view) {
         registrarEntradas();
     }

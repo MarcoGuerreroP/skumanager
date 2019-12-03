@@ -11,10 +11,9 @@ import java.util.List;
 
 public class InventarioAdapter extends RecyclerView.Adapter<InventarioAdapter.InventarioViewHolder> {
 
-    public List<ProductsModel> productLista;
+    public List<EntradasModel> entradasLista;
 
-    public InventarioAdapter(List<ProductsModel> productLista) {
-        this.productLista = productLista;
+    public InventarioAdapter(List<EntradasModel> entradasLista) { this.entradasLista = entradasLista;
     }
 
     public static class InventarioViewHolder extends RecyclerView.ViewHolder{
@@ -30,20 +29,20 @@ public class InventarioAdapter extends RecyclerView.Adapter<InventarioAdapter.In
 
     @Override
     public InventarioAdapter.InventarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_products, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_entradas, parent,false);
         InventarioViewHolder viewHolder = new InventarioViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull InventarioViewHolder holder, int position) {
-        holder.ID.setText(productLista.get(position).getID());
-        holder.Producto.setText(productLista.get(position).getProducto());
-        holder.PrecioU.setText(productLista.get(position).getPreciou());
+        holder.ID.setText(entradasLista.get(position).getIDE());
+        holder.Producto.setText(entradasLista.get(position).getDSCE());
+        holder.PrecioU.setText(entradasLista.get(position).getCANE());
     }
 
     @Override
     public int getItemCount() {
-        return productLista.size();
+        return entradasLista.size();
     }
 }

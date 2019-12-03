@@ -20,7 +20,7 @@ public class RegistrarSalida extends AppCompatActivity {
 
     public EditText IDS,CBS,DSCS,CANTS,UMS;
     public Button registrarS;
-    public ImageView lector;
+    public ImageView lector, back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,15 @@ public class RegistrarSalida extends AppCompatActivity {
         CANTS = findViewById(R.id.txtCANTS);
         registrarS = findViewById(R.id.btnRegistrarS);
         lector = findViewById(R.id.imageView6);
+        back = findViewById(R.id.imgBack3);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent salida = new Intent(RegistrarSalida.this,Menu.class);
+                startActivity(salida);
+            }
+        });
 
         lector.setOnClickListener(new View.OnClickListener() {
             @Override

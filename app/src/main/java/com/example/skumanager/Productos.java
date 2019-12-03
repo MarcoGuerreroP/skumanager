@@ -1,6 +1,7 @@
 package com.example.skumanager;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +17,9 @@ public class Productos extends AppCompatActivity {
     private RecyclerView recyclerViewProducts;
     private RecyclerViewAdapter productAdapter;
     public ImageView agregar;
+
+    private List<ProductsModel> productList = new ArrayList<>();
+    SQLiteConnectionHelper connection;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,7 @@ public class Productos extends AppCompatActivity {
         productAdapter = new RecyclerViewAdapter(connection.mostrarproductos());
         recyclerViewProducts.setAdapter(productAdapter);
 
+
         agregar = (ImageView) findViewById(R.id.imgAgregarProd);
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,8 +51,18 @@ public class Productos extends AppCompatActivity {
             }
         });
     }
-
-    //public List<ProductsModel> obtenerproductos;
-    //List<ProductsModel> products = new ArrayList<>();
-    //products.add(new ProductsModel(""))
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 101) {
+            if(resultCode == RESULT_OK) {
+                if (productList != null && connection != null) {
+                    productList.clear();
+                    productList = connection.mostrarproductos();
+                    productAdapter = new RecyclerViewAdapter(productList);
+                    recyclerViewProducts.setAdapter(productAdapter);
+                }
+            }
+        }
+    }
 }
