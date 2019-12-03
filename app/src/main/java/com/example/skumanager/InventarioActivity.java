@@ -29,7 +29,7 @@ public class InventarioActivity extends AppCompatActivity {
         recyclerViewInventario = findViewById(R.id.inventarioRecycler);
         recyclerViewInventario.setLayoutManager(new LinearLayoutManager(this));
 
-        invenarioAdapter = new InventarioAdapter(connection.mostrarproductos());
+        invenarioAdapter = new InventarioAdapter(connection.mostrarentradas());
         recyclerViewInventario.setAdapter(invenarioAdapter);
     }
 

@@ -56,6 +56,7 @@ public class AgregarProducto extends AppCompatActivity {
 
         SQLiteDatabase db = connection.getWritableDatabase();
         ContentValues valuesProd = new ContentValues();
+        setResult(RESULT_OK);
         if (ID != null) {
             if (CB != null) {
                 if (DSC != null) {
@@ -72,6 +73,7 @@ public class AgregarProducto extends AppCompatActivity {
 
                     setResult(RESULT_OK);
                     finish();
+
                 } else {
                     Toast.makeText(getApplicationContext(), "Ingrese un identificador", Toast.LENGTH_SHORT).show();
                 }

@@ -20,6 +20,9 @@ public class Productos extends AppCompatActivity {
     private List<ProductsModel> productList = new ArrayList<>();
     SQLiteConnectionHelper connection;
 
+    private List<ProductsModel> productList = new ArrayList<>();
+    SQLiteConnectionHelper connection;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +45,12 @@ public class Productos extends AppCompatActivity {
         productAdapter = new RecyclerViewAdapter(productList);
         recyclerViewProducts.setAdapter(productAdapter);
 
+<<<<<<< HEAD
         agregar = findViewById(R.id.imgAgregarProd);
+=======
+
+        agregar = (ImageView) findViewById(R.id.imgAgregarProd);
+>>>>>>> Cambios de aplicacion de sku mnager list view icon etc
         agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +59,10 @@ public class Productos extends AppCompatActivity {
             }
         });
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> Cambios de aplicacion de sku mnager list view icon etc
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -66,8 +77,11 @@ public class Productos extends AppCompatActivity {
             }
         }
     }
+<<<<<<< HEAD
 
     //public List<ProductsModel> obtenerproductos;
     //List<ProductsModel> products = new ArrayList<>();
     //products.add(new ProductsModel(""))
+=======
+>>>>>>> Cambios de aplicacion de sku mnager list view icon etc
 }
